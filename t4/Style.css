@@ -1,0 +1,21 @@
+.table {
+    counter-reset: rowCount;
+}
+
+.counterCell::before {
+    content: counter(rowCount);
+    counter-increment: rowCount;
+}
+
+#dTable th,
+#sTable th,
+#rTable th {
+    background-color: rgb(223, 146, 181);
+}
+
+#dTable tbody,
+#sTable tbody,
+#rTable tbody {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,25 @@
+.table {
+    background-color: rgb(195, 168, 220);
+    counter-reset: rowCount;
+}
+
+#table3 th {
+    background-color: black;
+    color: white;
+}
+
+.table th {
+    background-color: black;
+    color: white;
+}
+
+.counterCell::before {
+    content: counter(rowCount);
+    counter-increment: rowCount;
+}
+
+.btn:hover,
+.stateColor {
+    background-color: rgb(115, 203, 216) !important;
+    color: black !important;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script  defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script  defer src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script defer  src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <!-- <link rel="stylesheet" href="Style.css"> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <button type="button" class="btn btn-primary mb-3" id="addR" data-bs-toggle="modal" data-bs-target="#addPmodal">
+            Add Patient
+        </button>
+    </div>
+        <div class="modal fade" id="addPmodal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form">
+                            <div class="row form-group">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Name:</label>
+                                    <input type="text" id="name" name="nm" class="form-control" required><span></span>
+                                </div>
+
+                                 <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
+                                    <label>DOB:</label>
+                                    <input type="date" id="dob" class="form-control" required><span></span>
+                                </div>
+
+                                <div class="row form-group mt-2">
+                                     <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <input type="radio" id="male" class="form-check-input" name="gender"> <label>Male:</label>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <input type="radio" id="female" class="form-check-input" name="gender"> <label>Female:</label>
+                                </div>
+                                <span id="main"></span>
+                                </div>
+
+                                <div class="row form-group mt-2">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Email:</label>
+                                    <input type="email" id="email" class="form-control"><span></span>
+                                </div>
+
+                                  <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
+                                    <label>Contact Number:</label>
+                                    <input type="number" id="contact" class="form-control"><span></span>
+                                </div>
+
+                                  <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
+                                    <label>Country:</label>
+                                    <select name="" id="country">
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="UK">UK</option>
+                                    </select><span></span>
+                                </div>
+
+                                 <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
+                                    <label>State:</label>
+                                    <select name="" id="state">
+                                        <option value="Guajarat">Guajarat</option>
+                                        <option value="MP">MP</option>
+                                        <option value="UP">UP</option>
+                                    </select>
+                                </div>
+
+                                 <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
+                                    <label>City:</label>
+                                    <select name="" id="city">
+                                        <option value="Ahemdabad">Ahemdabad</option>
+                                        <option value="Bhopal">Bhopal</option>
+                                        <option value="Pune">Pune</option>
+                                    </select>
+                                </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="save">Save Changes</button>
+                        <button type="button" class="btn btn-primary" id="update">Update Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-responsive" id="tableData">
+                <thead>
+
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="modal fade" tabindex="-1" aria-hidden="true" id="addTmodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form1">
+                            <div class="row form-group">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Disease</label>
+                                    <input type="text" class="form-control" id="disease" required><span></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Doctor</label>
+                                    <input type="text" class="form-control" id="doctor" required><span></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Medicine</label>
+                                    <input type="text" class="form-control" id="medicine"><span></span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label>Follow Up Date</label>
+                                    <input type="date" class="form-control" id="date" required><span></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close1">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="save1">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script defer src="Script.js"></script>
+</body>
+</html>

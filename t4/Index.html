@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T4</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <script src="jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="DataTable/jquery.dataTables.min.css">
+    <script src="DataTable/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-5">
+            <button class="btn btn-primary mb-5" id="addR">Add Row</button>
+        </div>
+        <div>
+            <table class="table table-responsive" id="dTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Result</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p class="counterCell"></p>
+                        </td>
+                        <td><input type="text" class="form-control name_Ip" id="name1" value="John"><span></span></td>
+                        <td><input type="text" class="form-control sub_Ip" id="sub1" value="English"><span></span></td>
+                        <td><input type="number" class="form-control mark_Ip" id="mark1" value="50"><span></span></td>
+                        <td><button type="button" class="btn btn-success">Accept</button>&nbsp;<button type="button"
+                                class="btn btn-danger">Reject</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="counterCell"></p>
+                        </td>
+                        <td><input type="text" class="form-control name_Ip" id="name2" value="Joy"><span></span></td>
+                        <td><input type="text" class="form-control sub_Ip" id="sub2" value="Maths"><span></span></td>
+                        <td><input type="number" class="form-control mark_Ip" id="mark2" value="67"><span></span></td>
+                        <td><button type="button" class="btn btn-success">Accept</button>&nbsp;<button type="button"
+                                class="btn btn-danger">Reject</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="counterCell"></p>
+                        </td>
+                        <td><input type="text" class="form-control name_Ip" id="name3" value="Mack"><span></span></td>
+                        <td><input type="text" class="form-control sub_Ip" id="sub3" value="Physics"><span></span></td>
+                        <td><input type="number" class="form-control mark_Ip" id="mark3" value="34"><span></span></td>
+                        <td><button type="button" class="btn btn-success">Accept</button>&nbsp;<button type="button"
+                                class="btn btn-danger">Reject</button></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary mt-4" id="subBtn">Submit</button>
+        </div>
+
+        <div class="mt-5">
+            <h3 class="text-center" id="head1" style="display: none;">Student Data</h3>
+            <table class="table table-responsive" id="sTable">
+                <thead style="display: none;" id="th">
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="mt-5">
+            <h3 class="text-center" id="head2" style="display: none;">Result</h3>
+            <table class="table table-responsive" id="rTable">
+                <thead style="display: none;" id="th1">
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+    <script src="Script.js"></script>
+</body>
+
+</html>

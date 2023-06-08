@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>T2</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container mt-5 table-responsive">
+        <h3>Add & Delete Rows</h3>
+        <button type="button" class="btn btn-primary mt-5" id="addR" onclick='insRow()'> + </button>
+        <button type="button" class="btn btn-primary mt-5 btn-lg" id="ref" onclick="pageRef()">Refresh</button>
+        <br /><br />
+        <table class="table table-bordered" id="table2">
+            <tr>
+                <td>Col-1</td>
+                <td>Col-2</td>
+                <td>Action</td>
+            </tr>
+            <tbody id="reload">
+                <tr>
+                    <td><input type="text" class="form-control" /></td>
+                    <td><input type="text" class="form-control" /></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        var table = document.getElementById("table2");
+        var addR = document.getElementById("addR");
+
+        function insRow() {
+            if (table.rows.length <= 5) {
+                let row = table.insertRow(-1);
+                let cell1 = row.insertCell(0);
+                cell1.innerHTML = '<input type="text" class="form-control">';
+                let cell2 = row.insertCell();
+                cell2.innerHTML = '<input type="text" class="form-control">';
+                let cell3 = row.insertCell();
+                cell3.innerHTML = '<button type="button" class="btn btn-danger" onclick="rmRow(this)">-</button>';
+            } else {
+                alert("limit exceeds!!!");
+                addR.disabled = true;
+            }
+        }
+
+        function rmRow(e) {
+            e.parentNode.parentNode.remove();
+            addR.disabled = false;
+        }
+
+        function pageRef() {
+            var refresh = document.getElementById("reload");
+            refresh.innerHTML = '<tbody id="reload"><tr><td><input type="text" class="form-control" /></td><td><input type="text" class="form-control" /></td><td></td></tr></tbody>'
+            addR.disabled = false;
+        }
+    </script>
+</body>
+</html>

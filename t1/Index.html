@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <title>T1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="table-responsive m-5">
+            <h3 style="text-align: center;">Add & Delete Rows</h3>
+            <button type="button" id="addR" class="btn btn-primary" onclick="insRow()">+</button>
+            <br><br>
+            <table class="table" id="table1">
+                <tr>
+                    <th>Col-1</th>
+                    <th>Col-2</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var table = document.getElementById("table1");
+        var addRow = document.getElementById("addR");
+
+        function insRow() {
+            if (table.rows.length >= 5) {
+                addRow.disabled = true;
+            }
+            var rowCount = table.rows.length;
+            var colCount = table.rows[0].cells.length;
+            var row = table.insertRow(rowCount);
+
+            for (let i = 0; i < colCount; i++) {
+                var cell = row.insertCell(i);
+                if (i < colCount - 1) {
+                    cell.innerHTML = "<input type='text' class='form-control'>";
+                } else {
+                    cell.innerHTML = "<button type='button' class='btn btn-danger' onclick='rmRow(this)'>-</button>";
+                }
+            }
+
+        }
+
+        function rmRow(ele) {
+                ele.parentNode.parentNode.remove();
+                addRow.disabled = false;
+        }
+    </script>
+
+</body>
+</html>

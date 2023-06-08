@@ -1,0 +1,20 @@
+﻿.table {
+    background-color: aqua;
+    counter-reset: rowCount;
+}
+
+.counterCell::before {
+    content: counter(rowCount);
+    counter-increment: rowCount;
+}
+
+.btn:hover {
+    background-color: rgb(64, 223, 199);
+    color: black;
+}
+
+.stateColor {
+    background-color: rgb(64, 223, 199);
+    ;
+    color: black;
+}

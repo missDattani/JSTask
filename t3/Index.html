@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>T3</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 container text-center">
+                <button type="button" class="btn btn-primary mt-5" id="addR" onclick="addRow()">Add Row</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <table class="table table-responsive" id="table3">
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Result</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td data-label="No">1</td>
+                        <td data-label="Name"><input type="text" id="name1" class="form-control name_Ip"
+                                value="John" /><span></span></td>
+                        <td data-label="Subject"><input type="text" id="sub1" class="form-control sub_Ip"
+                                value="Maths" /><span></span></td>
+                        <td data-label="Marks"><input type="number" id="mark1" class="form-control mark_Ip"
+                                value="40" /><span></span></td>
+                        <td data-label="Result"><button type="button" class="btn btn-success" id="accept1"
+                                onclick="Accept(this)" data-clicked="false">Accept</button> <button type="button"
+                                class="btn btn-danger" id="reject1" onclick="Reject(this)">Reject</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td data-label="No">2</td>
+                        <td data-label="Name"><input type="text" id="name2" class="form-control name_Ip"
+                                value="Mack" /><span></span></td>
+                        <td data-label="Subject"><input type="text" id="sub2" class="form-control sub_Ip"
+                                value="Physics" /><span></span></td>
+                        <td data-label="Marks"><input type="number" id="mark2" class="form-control mark_Ip"
+                                value="60" /><span></span></td>
+                        <td data-label="Result"><button type="button" class="btn btn-success" id="accept2"
+                                onclick="Accept(this)" data-clicked="false">Accept</button> <button type="button"
+                                class="btn btn-danger" id="reject2" onclick="Reject(this)">Reject</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td data-label="No">3</td>
+                        <td data-label="Name"><input type="text" id="name3" class="form-control name_Ip"
+                                value="Joy" /><span></span></td>
+                        <td data-label="Subject"><input type="text" id="sub3" class="form-control sub_Ip"
+                                value="Science" /><span></span></td>
+                        <td data-label="Marks"><input type="number" id="mark3" class="form-control mark_Ip"
+                                value="55" /><span></span></td>
+                        <td data-label="Result"><button type="button" class="btn btn-success" id="accept3"
+                                onclick="Accept(this)" data-clicked="false">Accept</button> <button type="button"
+                                class="btn btn-danger" id="reject3" onclick="Reject(this)">Reject</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br />
+                <div class="col-lg-12 container text-center">
+                    <button type="button" class="btn btn-primary mt-5" onclick="saveData()">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 container text-center">
+                <h3 class="mt-5" style="display:none;" id="head1">Student Data</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mt-5">
+                <table class="table table-responsive" id="table4">
+
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 container text-center">
+                <h3 class="mt-5" style="display:none;" id="head2">Result Data</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mt-5">
+                <table class="table table-responsive" id="table5">
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="Script.js"></script>
+
+</html>
