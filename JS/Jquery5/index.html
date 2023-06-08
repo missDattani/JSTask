@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General_Task2</title>
+    <link href="BootStrap/CSS/bootstrap.min.css" rel="stylesheet">
+    <script src="BootStrap/JS/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.6.3.js"></script>
+    <script src="DataTable/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="DataTable/jquery.dataTables.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <button id="addData" class="btn btn-info mx-5">Add Data</button>
+    </div>
+    <div class="container mt-5">
+        <table id="saveData" class="table table-bordered mt-5">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var table = $('#saveData').DataTable();
+
+            $("#addData").click(function () {
+                Swal.fire({
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    title: 'Add Data',
+                    html:
+                        `<label>Name:</label><br>` +
+                        `<input type="text" id="name" class="swal2-input" placeholder="Enter Name" required><br>` +
+                        `<label>Age:</label><br>` +
+                        `<input type="number" id="age" class="swal2-input" placeholder="Enter Age" required><br>` +
+                        `<label>Designation:</label><br>` +
+                        `<input type="text" id="designation" class="swal2-input" placeholder="Enter Designation" required><br>`,
+
+                    showCancelButton: true,
+                    confirmButtonText: 'Submit',
+                    cancelButtonText: 'Cancel',
+                    preConfirm: () => {
+                        var name = $('#name').val();
+                        var age = $('#age').val();
+                        var designation = $('#designation').val();
+
+                        if (!name || !age || !designation) {
+                            Swal.showValidationMessage('Please fill out all fields');
+                        } else if (age < 20 || age > 100) {
+                            Swal.showValidationMessage('Age must be between 20 to 100');
+                        } else {
+                            table.row.add([name, age, designation]).draw();
+
+                            Swal.fire({
+                                title: 'Success!!',
+                                text: 'Data Added Successfully',
+                                icon: 'success'
+                            });
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+</html>

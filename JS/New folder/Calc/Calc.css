@@ -1,0 +1,17 @@
+#dTable th{
+    background-color: rgb(223, 146, 181);
+}
+
+#dTable tbody{
+    background-color: black;
+    color: white;
+}
+
+.modal-header, .modal-footer{
+    background-color: rgb(223, 146, 181);
+}
+
+.modal-body{
+    background-color: black;
+    color: white;
+}

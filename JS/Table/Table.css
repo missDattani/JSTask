@@ -1,0 +1,71 @@
+body {
+    background: radial-gradient(circle, rgb(179, 225, 243), rgb(247, 169, 230), rgb(217, 160, 250));
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    transition: all 0.5s ease-in-out;
+}
+
+h3:hover {
+    transform: scale(1.1);
+}
+
+#searchInput {
+    width: 40%;
+    border-radius: 10px;
+}
+
+#searchInput {
+    transition: all 0.5s ease-in-out;
+}
+
+#searchInput:hover {
+    transform: scale(1.1);
+}
+
+.table th {
+    cursor: pointer;
+    background-color: rgb(175, 4, 113);
+}
+
+.table {
+    background-color: rgb(167, 177, 177);
+    border-collapse: collapse;
+    font-weight: 600;
+    counter-reset: rowCount;
+}
+
+.counterCell:before {
+    content: counter(rowCount);
+    counter-increment: rowCount;
+}
+
+
+.icon {
+    background: url(Icon.png) no-repeat right;
+    background-size: 20px;
+}
+
+.asc {
+    background: url(sort-down.png) no-repeat right;
+    background-size: 20px;
+
+}
+
+.btn:hover {
+    background-color: rgb(64, 212, 223);
+    color: black;
+}
+
+
+@media only screen and (max-width: 432px) {
+    tr,
+    td,
+    th {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}

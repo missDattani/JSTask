@@ -1,0 +1,88 @@
+body {
+    background: radial-gradient(circle, rgb(197, 229, 243), rgb(245, 197, 234), rgb(221, 183, 243));
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    transition: all 0.5s ease-in-out;
+}
+
+h3:hover {
+    transform: scale(1.1);
+}
+
+#searchInput {
+    width: 40%;
+    border-radius: 10px;
+}
+
+#searchInput {
+    transition: all 0.5s ease-in-out;
+}
+
+#searchInput:hover {
+    transform: scale(1.1);
+}
+
+.table th {
+    cursor: pointer;
+    background-color: rgb(175, 4, 113);
+}
+
+.table {
+    background-color: rgb(167, 177, 177);
+    font-weight: 600;
+    counter-reset: rowCount;
+}
+
+.counterCell:before {
+    content: counter(rowCount);
+    counter-increment: rowCount;
+}
+
+
+.icon {
+    background: url(Icon.png) no-repeat right;
+    background-size: 20px;
+}
+
+.asc {
+    background: url(sort-down.png) no-repeat right;
+    background-size: 20px;
+
+}
+
+.btn:hover, .stateColor{
+    background-color: rgb(64, 212, 223);
+    color: black;
+}
+
+@media (max-width: 500px) {
+    #dataTable th{
+        display: none;
+    }
+   #dataTable tr,#dataTable td{
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    #dataTable tr{
+        margin-bottom: 15px;
+    }
+    #dataTable td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    #dataTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
